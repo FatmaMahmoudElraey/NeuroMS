@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>MULTIPLE SCLEROSIS</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json"> -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <!-- <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"> -->
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+ 
+ html, body {
+  background: #efefef;      
+  height:100%;  
+}
+#center-text {          
+  display: flex;
+  flex: 1;
+  flex-direction:column; 
+  justify-content: center;
+  align-items: center;  
+  height:100%;
+  
+}
+#chat-circle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #129DE8;
+  width: 80px;
+  height: 80px;  
+  border-radius: 50%;
+  color: white;
+  padding: 28px;
+  cursor: pointer;
+  box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.btn#my-btn {
+     background: white;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border-radius: 45px;
+    padding-right: 40px;
+    padding-left: 40px;
+    color: #5865C3;
+}
+#chat-overlay {
+    background: rgba(255,255,255,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: none;
+}
+
+
+.chat-box {
+  display:none;
+  background: #efefef;
+  position:fixed;
+  right:20px;
+  bottom:20px;  
+  width:350px;
+  max-width: 85vw;
+  max-height:100vh;
+  border-radius:5px;  
+/*   box-shadow: 0px 5px 35px 9px #464a92; */
+  box-shadow: 0px 5px 35px 9px #ccc;
+}
+.chat-box-toggle {
+  float:right;
+  margin-right:15px;
+  cursor:pointer;
+}
+.chat-box-toggle i{
+    font-size: 26px;
+}
+.chat-box-header {
+  background: #129DE8;
+  height:70px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px; 
+  color:white;
+  text-align:center;
+  font-size:20px;
+  padding-top:17px;
+}
+.chat-box-body {
+  position: relative;  
+  height:370px;  
+  height:auto;
+  border:1px solid #ccc;  
+  overflow: hidden;
+}
+.chat-box-body:after {
+  content: "";
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAgOCkiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgY3g9IjE3NiIgY3k9IjEyIiByPSI0Ii8+PHBhdGggZD0iTTIwLjUuNWwyMyAxMW0tMjkgODRsLTMuNzkgMTAuMzc3TTI3LjAzNyAxMzEuNGw1Ljg5OCAyLjIwMy0zLjQ2IDUuOTQ3IDYuMDcyIDIuMzkyLTMuOTMzIDUuNzU4bTEyOC43MzMgMzUuMzdsLjY5My05LjMxNiAxMC4yOTIuMDUyLjQxNi05LjIyMiA5LjI3NC4zMzJNLjUgNDguNXM2LjEzMSA2LjQxMyA2Ljg0NyAxNC44MDVjLjcxNSA4LjM5My0yLjUyIDE0LjgwNi0yLjUyIDE0LjgwNk0xMjQuNTU1IDkwcy03LjQ0NCAwLTEzLjY3IDYuMTkyYy02LjIyNyA2LjE5Mi00LjgzOCAxMi4wMTItNC44MzggMTIuMDEybTIuMjQgNjguNjI2cy00LjAyNi05LjAyNS0xOC4xNDUtOS4wMjUtMTguMTQ1IDUuNy0xOC4xNDUgNS43IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg1LjcxNiAzNi4xNDZsNS4yNDMtOS41MjFoMTEuMDkzbDUuNDE2IDkuNTIxLTUuNDEgOS4xODVIOTAuOTUzbC01LjIzNy05LjE4NXptNjMuOTA5IDE1LjQ3OWgxMC43NXYxMC43NWgtMTAuNzV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjcxLjUiIGN5PSI3LjUiIHI9IjEuNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjE3MC41IiBjeT0iOTUuNSIgcj0iMS41Ii8+PGNpcmNsZSBmaWxsPSIjMDAwIiBjeD0iODEuNSIgY3k9IjEzNC41IiByPSIxLjUiLz48Y2lyY2xlIGZpbGw9IiMwMDAiIGN4PSIxMy41IiBjeT0iMjMuNSIgcj0iMS41Ii8+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTkzIDcxaDN2M2gtM3ptMzMgODRoM3YzaC0zem0tODUgMThoM3YzaC0zeiIvPjxwYXRoIGQ9Ik0zOS4zODQgNTEuMTIybDUuNzU4LTQuNDU0IDYuNDUzIDQuMjA1LTIuMjk0IDcuMzYzaC03Ljc5bC0yLjEyNy03LjExNHpNMTMwLjE5NSA0LjAzbDEzLjgzIDUuMDYyLTEwLjA5IDcuMDQ4LTMuNzQtMTIuMTF6bS04MyA5NWwxNC44MyA1LjQyOS0xMC44MiA3LjU1Ny00LjAxLTEyLjk4N3pNNS4yMTMgMTYxLjQ5NWwxMS4zMjggMjAuODk3TDIuMjY1IDE4MGwyLjk0OC0xOC41MDV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxwYXRoIGQ9Ik0xNDkuMDUgMTI3LjQ2OHMtLjUxIDIuMTgzLjk5NSAzLjM2NmMxLjU2IDEuMjI2IDguNjQyLTEuODk1IDMuOTY3LTcuNzg1LTIuMzY3LTIuNDc3LTYuNS0zLjIyNi05LjMzIDAtNS4yMDggNS45MzYgMCAxNy41MSAxMS42MSAxMy43MyAxMi40NTgtNi4yNTcgNS42MzMtMjEuNjU2LTUuMDczLTIyLjY1NC02LjYwMi0uNjA2LTE0LjA0MyAxLjc1Ni0xNi4xNTcgMTAuMjY4LTEuNzE4IDYuOTIgMS41ODQgMTcuMzg3IDEyLjQ1IDIwLjQ3NiAxMC44NjYgMy4wOSAxOS4zMzEtNC4zMSAxOS4zMzEtNC4zMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48L3N2Zz4=');
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height:100%;
+  position: absolute;
+  z-index: -1;   
+}
+#chat-input {
+  background: #f4f7f9;
+  width:100%; 
+  position:relative;
+  height:47px;  
+  padding-top:10px;
+  padding-right:50px;
+  padding-bottom:10px;
+  padding-left:15px;
+  border:none;
+  resize:none;
+  outline:none;
+  border:1px solid #ccc;
+  color:#888;
+  border-top:none;
+  border-bottom-right-radius:5px;
+  border-bottom-left-radius:5px;
+  overflow:hidden;  
+}
+.chat-input > form {
+    margin-bottom: 0;
+}
+#chat-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #ccc;
+}
+#chat-input::-moz-placeholder { /* Firefox 19+ */
+  color: #ccc;
+}
+#chat-input:-ms-input-placeholder { /* IE 10+ */
+  color: #ccc;
+}
+#chat-input:-moz-placeholder { /* Firefox 18- */
+  color: #ccc;
+}
+.chat-submit {  
+  position:absolute;
+  bottom:3px;
+  right:10px;
+  background: transparent;
+  box-shadow:none;
+  border:none;
+  border-radius:50%;
+  color:#129DE8;
+  width:35px;
+  height:35px;  
+}
+.chat-submit i{
+    font-size:26px;
+}
+.chat-logs {
+  padding:15px; 
+  height:370px;
+  overflow-y:scroll;
+}
+
+.chat-logs::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.chat-logs::-webkit-scrollbar
+{
+	width: 5px;  
+	background-color: #F5F5F5;
+}
+
+.chat-logs::-webkit-scrollbar-thumb
+{
+	background-color: #129DE8;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+   .chat-logs {
+        height:40vh;
+    }
+}
+
+.chat-msg.user > .msg-avatar img {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  float:left;
+  width:15%;
+}
+.chat-msg.self > .msg-avatar img {
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  float:right;
+  width:15%;
+}
+.cm-msg-text {
+  background:white;
+  padding:10px 15px 10px 15px;  
+  color:#666;
+  max-width:75%;
+  float:left;
+  margin-left:10px; 
+  position:relative;
+  margin-bottom:20px;
+  border-radius:30px;
+}
+.chat-msg {
+  clear:both;    
+}
+.chat-msg.self > .cm-msg-text {  
+  float:right;
+  margin-right:10px;
+  background: #129DE8;
+  color:white;
+}
+.cm-msg-button>ul>li {
+  list-style:none;
+  float:left;
+  width:50%;
+}
+.cm-msg-button {
+    clear: both;
+    margin-bottom: 70px;
+}
+#body{
+    z-index: 100000;
+    position: fixed;
+}
+.preloader{
+    z-index: 1000000;
+}
+.robot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    bottom: 30px;
+    position: relative;
+    right: 30px;
+}
+.robot i{
+    font-size: 45px;
+}
+.bot{
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+
+    </style>
+
+
+</head>
+
+<body class="active-preloader-ovh">
+
+    <div class="preloader home-two">
+        <div class="spinner"></div>
+    </div><!-- /.preloader -->
+
+    <div id="body"> 
+  
+        <div id="chat-circle" class="btn btn-raised">
+            <div class="robot">
+                <div id="chat-overlay"></div>
+                <i class="ri-robot-2-line"></i>
+            </div>
+                
+            </div>
+          
+          <div class="chat-box">
+            <div class="chat-box-header">
+              ChatBot
+              <span class="chat-box-toggle"><i class="ri-close-circle-line"></i></span>
+            </div>
+            <div class="chat-box-body">
+              <div class="chat-box-overlay">   
+              </div>
+              <div class="chat-logs">
+                <div class="bot"><b>Hi, I am here to assist you. Feel free to ask any question!</b></div>
+              </div><!--chat-log -->
+            </div>
+            <div class="chat-input">      
+              <form>
+                <input type="text" id="chat-input" placeholder="Send a message..."/>
+              <button type="submit" class="chat-submit" id="chat-submit"><i class="ri-send-plane-fill"></i></button>
+              </form>      
+            </div>
+          </div>
+          
+          
+          
+          
+        </div>
+
+
+
+
+
+    <!-- <div class="top-header home-two">
+    </div> -->
+    <header class="header header-home-two">
+        <nav class="navbar navbar-default header-navigation stricky">
+            <div class="thm-container clearfix">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navigation"
+                        aria-expanded="false"><i class="fa fa-bars"></i></button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse main-navigation mainmenu " id="main-nav-bar">
+
+                    <ul class="nav navbar-nav navigation-box">
+                        <li class="current">
+                            <a href="index.html">Home</a>
+                            <!-- <ul class="sub-menu">
+                                <li><a href="index.html">Home One</a></li>
+                                <li><a href="index2.html">Home Two</a></li>
+                                <li><a href="index3.html">Home Three</a></li>
+                                <li><a href="index4.html">Home Four</a></li>
+                                <li><a href="index5.html">Home Five</a></li>
+                                <li><a href="index6.html">Home Six</a></li>
+                                <li><a href="index7.html">Home Seven</a></li>
+                            </ul> -->
+                        </li>
+                        <li> <a href="#services">Our Services</a> </li>
+                        <li> <a href="#aboutMS">About MS</a> </li>
+                        <li> <a href="#symptoms">Symptoms</a> </li>
+                        <li> <a href="#diagnosis">Diagnosis</a> </li>
+                        <!-- <li>
+                            <a href="#treatment">MS Treatment</a>
+                        </li> -->
+                        <li>
+                            <a href="#social_network">Social network</a>
+                            <!-- <ul class="sub-menu">
+                                <li>
+                                    <a href="team.html">Our Team</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="team.html">Team Style One</a></li>
+                                        <li><a href="team-details.html">Doctor Details</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="appointment.html">Appointment</a></li>
+                            </ul> -->
+                        </li>
+                
+                        <!-- <li> <a href="#contacts">Contact</a> </li> -->
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+                <div class="right-side-box">
+                    <a href="" class="book-appointment"> NeuroMS</a>
+                        <!-- <a href="#" class="book-appointment logo"></a> -->
+
+                </div>
+            </div><!-- /.container -->
+        </nav>
+    </header><!-- /.header -->
+
+    <div id="minimal-bootstrap-carousel" class="carousel slide carousel-fade slider-home-two" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item slide-1" style="background-image: url(images/header2.jpg);background-position: left center;">
+
+                <div class="carousel-caption">
+                    <div class="thm-container">
+                        <div class="box valign-middle">
+                            <div class="content ">
+                                <div class="icon-box" data-animation="animated fadeInUp"><i class="clinmedix-icon-analysis"></i><i class="clinmedix-icon-cardiogram-1"></i><i class="clinmedix-icon-pills2"></i></div><!-- /.icon-box -->
+                                <h3 data-animation="animated fadeInUp">MULTIPLE SCLEROSIS</h3>
+                                <p data-animation="animated fadeInDown">Multiple sclerosis (MS) is an unpredictable disorder that can cause a variety of symptoms, <br> which for many, can flare-up and then subside over the course of days, months, or even years.</p>
+                                <a href="#" class="banner-btn" data-animation="animated fadeInDown">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item slide-2" style="background-image: url(images/header1.webp);background-position: center center;">
+
+                <div class="carousel-caption">
+                    <div class="thm-container">
+                        <div class="box valign-middle">
+                            <div class="content pull-right">
+                                <div class="icon-box" data-animation="animated fadeInUp"><i class="clinmedix-icon-analysis"></i><i class="clinmedix-icon-cardiogram-1"></i><i class="clinmedix-icon-pills2"></i></div><!-- /.icon-box -->
+                                <h3 data-animation="animated fadeInUp">MULTIPLE SCLEROSIS</h3>
+                                <p data-animation="animated fadeInDown">Multiple sclerosis (MS) is an unpredictable disorder that can cause a variety of symptoms, <br> which for many, can flare-up and then subside over the course of days, months, or even years.</p>
+                                <a  href="#services" class="banner-btn" data-animation="animated fadeInDown">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="item active slide-3" style="background-position: center center;">
+
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/geQP_zYS-6s?autoplay=1&controls=0&loop=1&mute=1&playlist=geQP_zYS-6s" allowfullscreen></iframe>
+                </div>
+                <div class="carousel-caption">
+                    <div class="thm-container">
+                        <div class="box valign-middle">
+                            <div class="content">
+                                <div class="icon-box" data-animation="animated fadeInUp"><i class="clinmedix-icon-analysis"></i><i class="clinmedix-icon-cardiogram-1"></i><i class="clinmedix-icon-pills2"></i></div>
+                                <h3 data-animation="animated fadeInUp">MULTIPLE SCLEROSIS</h3>
+                                <p data-animation="animated fadeInDown">Multiple sclerosis (MS) is an unpredictable disorder that can cause a variety of symptoms, <br> which for many, can flare-up and then subside over the course of days, months, or even years.</p>
+                                <a href="#" class="banner-btn" data-animation="animated fadeInDown">Our Services</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#minimal-bootstrap-carousel" role="button" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Services section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="sec-title-style-two text-center">
+                <!-- <span class="tag-line">Mollit animid acusm est laborum sed dolore perspiciatis unde</span> -->
+                <div class="line"></div><!-- /.line -->
+                <h3>Explore Our <span class="color-1"></span><span class="color-1">Services</span></h3>
+                <p>No single test can diagnose MS. The medical history, neurologic exam and lab tests <br>help healthcare providers rule out other diseases and confirm the MS diagnosis.
+
+                    <!-- <br> mque lorem tium  ipsum tempor incididunt ut labore et dolore magna aliqua </p> -->
+            </div><!-- /.sec-title-style-two -->
+            <div class="outer-box">
+                <div class="services-carousel owl-carousel wol-theme owl-nav-none owl-dot-style-three">
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="clinmedix-icon-x-ray"></span></div>
+                            <h4>Clinically Isolated Syndrome (CIS)</h4>
+                            <div class="text">CIS refers to a first episode of neurologic symptoms like those in MS. </div>
+                            <!-- <div class="text">know more about Clinically Isolated Syndrome and fill a form to diagnosis</div> -->
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:5000/cis_home" class="theme-btn">Click for Diagnosis</a></div>
+                        </div>
+                    </div>
+
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="ri-brain-line"></span></div>
+                            <h4>Diagnostic Imaging</h4>
+                            <div class="text">An MRI (Magnetic Resonance Imaging) of the brain is a key diagnostic tool used in the evaluation of MS. </div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:5000" class="theme-btn">Click for Diagnosis</a></div>
+                        </div>
+                    </div>
+
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="clinmedix-icon-stethoscope"></span></div>
+                            <h4>The Expanded Disability Status Scale (EDSS)</h4>
+                            <div class="text">is a method of quantifying disability in MS and monitoring changes in the level of disability over time.</div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:5000/edss_home" class="theme-btn">Click to know your EDSS</a></div>
+                        </div>
+                    </div>
+
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="clinmedix-icon-stethoscope"></span></div>
+                            <h4>Symbol Digit Modalities Test (SDMT)</h4>
+                            <div class="text">is a cognitive assessment tool commonly used in MS research and clinical practice. It measures information processing speed and working memory by requiring individuals to match numbers with corresponding symbols within a specific time frame.</div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:2000" class="theme-btn">Click to know your EDSS</a></div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="ri-mental-health-line"></span></div>
+                            <h4>Scripps Neurological Rating Scale (SNRS)</h4>
+                            <div class="text">is a clinical rating scale used to evaluate the neurological status of individuals with MS. It assesses various domains, including motor function, sensory function, sphincter function, cerebellar function, and mental function.</div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:2000" class="theme-btn">Click to know your EDSS</a></div>
+                        </div>
+                    </div>
+
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="ri-brain-line"></span></div>
+                            <h4>Combined Weighted Imaging in Scoring of MS(CombiWISE)</h4>
+                            <div class="text">is a quantitative MRI scoring system used in MS research. It combines different MRI sequences, such as T1-weighted, T2-weighted, and fluid-attenuated inversion recovery (FLAIR) images, to assess the presence and severity of MS lesions in the brain.</div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:2000" class="theme-btn">Click to know your EDSS</a></div>
+                        </div>
+                    </div> -->
+
+                    <div class="services-block-one">
+                        <div class="inner-box">
+                            <!-- <div class="icon"><span class="clinmedix-icon-eye"><i class="ri-mental-health-line"></i></span></div> -->
+                            <div class="icon"><span class="ri-mental-health-line"></span></div>
+                            <h4>Monitoring brain, hand, and mobility</h4>
+                            <div class="text">perform simple tasks on your smartphone with the aim of understanding the effects of MS on mood, cognition, hand-motor function, postural stability, and gait.</div>
+                            <div class="read-more-btn"><a target=”_blank” href="http://127.0.0.1:5000/monitor_home" class="theme-btn">Read More</a></div>
+                        </div>
+                    </div>
+                  
+
+                    <!-- <div class="services-block-one">
+                        <div class="inner-box">
+                            <div class="icon"><span class="ri-brain-line"></span></div>
+                            <h4>MRI Lesions Segmentation</h4>
+                            <div class="text">An MRI (Magnetic Resonance Imaging) of the brain is a key diagnostic tool used in the evaluation of MS. </div>
+                            <div class="read-more-btn"><a target=”_blank” href="#" class="theme-btn">Click for Diagnosis</a></div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>                
+        </div>
+    </section>
+
+<!-- ================= about ms ================= -->
+<section id="aboutMS" class="service-style-one sec-pad">
+    <div class="thm-container">
+        <!-- <div class="sec-title-style-two text-center">
+            <h3>Premium Medical <span class="color-1">Services</span></h3>
+            <p>Mollit animid acusm est laborum sed dolore perspiciatis unde omnis iste natus error volt sit ipsum dui <br> mque lorem tium  ipsum tempor incididunt ut labore et dolore magna aliqua </p>
+        </div> -->
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="single-service-style-one color-1 clearfix">
+                    <div class="img-box pull-left">
+                        <img src="images/mri2.jpg" alt="Awesome Image">
+                    </div><!-- /.img-box -->
+                    <div class="text-box pull-right">
+                        <div class="inner-box">
+                            <a href="departments-details-2.html">
+                                <h3>How Is Multiple Sclerosis Diagnosed?</h3>
+                            </a>
+                            <p>No single test can diagnose MS. The medical history, neurologic exam and lab tests help physicians rule out other diseases and confirm the MS diagnosis.</p>
+                            <!-- <a href="departments-details-2.html" class="more-btn">Read More <i class="fa fa-angle-double-right"></i>/.fa</a>/.more-btn -->
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.text-box -->
+                </div><!-- /.single-service-style-one -->
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="single-service-style-one color-1 clearfix">
+                    <div class="img-box pull-left">
+                        <img src="images/ms.jpg" alt="Awesome Image">
+                    </div><!-- /.img-box -->
+                    <div class="text-box pull-right">
+                        <div class="inner-box">
+                            <a href="departments-details-1.html">
+                                <h3>Possible MS</h3>
+                            </a>
+                            <p>Find information, resources and tips for managing that challenging time before a diagnosis of MS can either be confirmed or ruled out.</p>
+                            <!-- <a href="departments-details-1.html" class="more-btn">Read More <i class="fa fa-angle-double-right"></i>/.fa</a>/.more-btn -->
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.text-box -->
+                </div><!-- /.single-service-style-one -->
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="single-service-style-one color-1 clearfix">
+                    <div class="img-box pull-right">
+                        <img src="images/diagnosis.jpg" alt="Awesome Image">
+                    </div><!-- /.img-box -->
+                    <div class="text-box pull-left">
+                        <div class="inner-box">
+                            <a href="departments-details-4.html">
+                                <h3>Types of Multiple Sclerosis</h3>
+                            </a>
+                            <p>Explore the 4 disease courses to understand the similarities and differences between them.</p>
+                            <!-- <a href="departments-details-4.html" class="more-btn">Read More <i class="fa fa-angle-double-right"></i>/.fa</a>/.more-btn -->
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.text-box -->
+                </div><!-- /.single-service-style-one -->
+            </div><!-- /.col-md-6 -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="single-service-style-one color-1 clearfix">
+                    <div class="img-box pull-right">
+                        <img src="images/ms2.jpg" alt="Awesome Image">
+                    </div><!-- /.img-box -->
+                    <div class="text-box pull-left">
+                        <div class="inner-box">
+                            <a href="departments-details-3.html">
+                                <h3>Diagnostic Imaging</h3>
+                            </a>
+                            <p>Dolor sit amet, consectetur adipisicing elit por incididunt ut labore et dolore ma
+                                gna alin veniam, quis nostrud exercitat exercitation ullamco laboris</p>
+                            <!-- <a href="departments-details-3.html" class="more-btn">Read More <i class="fa fa-angle-double-right"></i>/.fa</a>/.more-btn -->
+                        </div><!-- /.inner-box -->
+                    </div><!-- /.text-box -->
+                </div><!-- /.single-service-style-one -->
+            </div><!-- /.col-md-6 -->
+        </div><!-- /.row -->
+    </div><!-- /.thm-container -->
+</section>
+
+
+<section class="fun-fact-style-one">
+    <div class="thm-container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-fun-fact">
+                    <h3><span class="counter">2.8</span>M</h3>
+                    <p>people with MS</p>
+                </div><!-- /.single-fun-fact -->
+            </div><!-- /.col-md-3 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-fun-fact">
+                    <h3><span class="counter">59,671</span></h3>
+                    <p>Patients in Egypt</p>
+                </div><!-- /.single-fun-fact -->
+            </div><!-- /.col-md-3 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-fun-fact">
+                    <h3><span class="counter">70</span>%</h3>
+                    <p>with Mobility difficulties</p>
+                </div><!-- /.single-fun-fact -->
+            </div><!-- /.col-md-3 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="single-fun-fact">
+                    <h3><span class="counter">30</span>%</h3>
+                    <p>job loss due to the disease's unpredictable nature</p>
+                </div><!-- /.single-fun-fact -->
+            </div><!-- /.col-md-3 -->
+        </div><!-- /.row -->
+    </div><!-- /.thm-container -->
+</section>
+<!-- ============================signs and symptoms ================ -->
+    <section id="symptoms"class="service-style-four sec-pad">
+        <div class="thm-container">
+            <div class="service-tab-content">
+                <div class="single-tab-content row">
+                    <div class="col-md-6">
+                        <img style="width: 100%;" src="images/physical_Symptoms.webp" alt="Awesome Image"/>
+                        
+                    </div><!-- /.col-md-6 -->
+                    <div class="col-md-6">
+                        <div class="service-inner-tab-content">
+                            <h3>Signs and Symptoms</h3>
+                            <p>Individuals with multiple sclerosis (MS) may experience one or more of a variety of symptoms, possibly affecting individuals physically, emotionally, mentally, psychologically, and/or in ways that others can’t see (the “invisible” symptoms of MS).</p>
+                            <!-- The types and severity of symptoms differ greatly between people with MS, so one person’s experience with this disorder may be very different from another’s. To follow is a list of common symptoms experienced with MS, each with a link to detailed information about that symptom, along with treatment strategies.s -->
+                            <h4>Common Physical Symptoms of Multiple Sclerosis</h4>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <ul class="list-items">
+                                        <li><i class="fa fa-check"></i>balance problems</li>
+                                        <li><i class="fa fa-check"></i>bladder dysfunction</li>
+                                        <li><i class="fa fa-check"></i>bowel problems</li>
+                                    </ul><!-- /.list-items -->
+                                </div><!-- /.col-md-5 -->
+                                <div class="col-md-5">
+                                    <ul class="list-items">
+                                        <li><i class="fa fa-check"></i>mobility and walking issues</li>
+                                        <li><i class="fa fa-check"></i> speech difficulties</li>
+                                        <li><i class="fa fa-check"></i>swallowing disorders</li>
+                                    </ul><!-- /.list-items -->
+                                </div><!-- /.col-md-5 -->
+                            </div><!-- /.row -->
+                            <div class="mt-4">
+                                <a href="symptoms.html" class="more-btn">Read More <i class="fa fa-angle-double-right"></i><!-- /.fa --></a><!-- /.more-btn -->
+
+                            </div>
+
+                        </div><!-- /.service-inner-tab-content -->
+                    </div><!-- /.col-md-6 -->
+                </div><!-- /.single-tab-content -->
+            </div><!-- /.service-tab-content -->
+        </div>
+            
+    </section><!-- /.service-style-four -->
+
+   <!-- ================== diagnosis ================== -->
+   <section id="diagnosis" class="task-section">
+    <div class="thm-container">
+        <div class="row clearfix">
+            
+            <!--Image Column-->
+            <div class="image-column col-lg-5">
+                <div class="inner-column">
+                    <div class="image">
+                        <!-- <img src="images/brain_header.jpg" alt=""> -->
+                        <!-- <div class="default-video-box">
+                            <a href="https://www.youtube.com/embed/geQP_zYS-6s?autoplay=1&amp;controls=0&amp;loop=1&amp;mute=1&amp;playlist=geQP_zYS-6s" class="overlay-link lightbox-image video-popup ripple"><span class="fa fa-play"></span></a>
+                        </div> -->
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/-3sAZ_ZFhBE?si=WASho0k12L-mRqaL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--Content Column-->
+            <div class="content-column col-lg-7">
+                <div class="inner-column">
+                    <div class="title">Diagnosis</div>
+                    <h2>Tests for multiple sclerosis</h2>
+                    
+                    <!--Featured Block Two-->
+                    <div class="feature-block-two alternate">
+                        <div class="inner-box">
+                            <h3>Neurological examination</h3>
+                            <div class="text">Your neurologist will look for abnormalities, changes or weakness in your vision, eye movements, hand or leg strength, balance and co-ordination, speech and reflexes.
+                                These may show whether your nerves are damaged in a way that might suggest MS. </div>
+                        </div>
+                    </div>
+                    
+                    <!--Featured Block Two-->
+                    <div class="feature-block-two alternate">
+                        <div class="inner-box">
+                            <h3>MRI scan</h3>
+                            <div class="text">EAn MRI scan is a painless scan that uses strong magnetic fields and radio waves to produce detailed images of the inside of the body.
+                                It can show whether there's any damage or scarring of the myelin sheath (the layer surrounding your nerves) in your brain and spinal cord. Finding this can help confirm a diagnosis in most people with MS.</div>
+                        </div>
+                    </div>
+
+                    <!--Featured Block Two-->
+                    <div class="feature-block-two alternate">
+                        <div class="inner-box">
+                            <h3>Evoked potential test</h3>
+                            <div class="text">There are several types of evoked potential test. The most common type assesses how well the eyes work.
+                                Light patterns are shown to the eyes while your brainwaves are monitored using small, sticky patches called electrodes placed on your head.                        
+                                It's a painless test and can show whether it takes your brain longer than normal to receive messages.</div>
+                        </div>
+                    </div>
+                    <!--Featured Block Two-->
+                    <div class="feature-block-two alternate">
+                        <div class="inner-box">
+                            <h3>Lumbar puncture</h3>
+                            <div class="text">A lumbar puncture is a procedure to remove a sample of your spinal fluid by inserting a needle into the lower back.
+                                The sample is then tested for immune cells and antibodies, which is a sign that your immune system has been fighting a disease in your brain and spinal cord.
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- =================== social network =================== -->
+    <section id="social_network" class="service-style-four sec-pad">
+        <div class="thm-container">
+            <div class="service-tab-content">
+                <div class="single-tab-content row">
+                    <div class="col-md-6">
+                        <div class="service-inner-tab-content">
+                            <h3>Join Our Supportive MS Social Network</h3>
+                            <p>Welcome to our vibrant community dedicated to supporting individuals with multiple sclerosis!</p>
+                            <!-- The types and severity of symptoms differ greatly between people with MS, so one person’s experience with this disorder may be very different from another’s. To follow is a list of common symptoms experienced with MS, each with a link to detailed information about that symptom, along with treatment strategies.s -->
+                            <h4>Connect, Share, and Thrive Together</h4>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <ul class="list-items">
+                                        <li><i class="fa fa-check"></i>Together, we can empower each other, foster resilience, and inspire hope.</li>
+                                        <li><i class="fa fa-check"></i>Engage with a Supportive Community</li>
+                                        <li><i class="fa fa-check"></i>Showcase your MS story, interests, and accomplishments through a customizable profile. Let others get to know you better, fostering meaningful connections based on shared experiences and passions.</li>
+                                    </ul><!-- /.list-items -->
+                                </div><!-- /.col-md-5 -->
+                            </div><!-- /.row -->
+                            <div class="mt-4">
+                                <a href="http://127.0.0.1:5500/signup.html" class="more-btn">Join our community<i class="fa fa-angle-double-right"></i><!-- /.fa --></a><!-- /.more-btn -->
+                            </div>
+
+                        </div><!-- /.service-inner-tab-content -->
+                    </div><!-- /.col-md-6 -->
+                    
+                    <div class="col-md-6">
+                        <img style="width: 100%;" src="images/social-network.jpg" alt="Awesome Image"/>
+                        
+                    </div><!-- /.col-md-6 -->
+                    
+                </div><!-- /.single-tab-content -->
+            </div><!-- /.service-tab-content -->
+        </div>
+            
+    </section><!-- /.service-style-four -->
+ 
+
+    <!-- <div class="search_area zoom-anim-dialog mfp-hide" id="test-search">
+        <div class="search_box_inner">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><i class="bitmex-icon-search"></i></button>
+                </span>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <section class="hidden-sidebar side-navigation">
+        <a href="#" class="close-button side-navigation-close-btn fa fa-times"></a>
+        <div class="sidebar-content">
+            <h3>Clin Medix Medical<br /> & Health <br /> Html Template</h3> 
+            <p>We plainly comprehend that you need not to lose, but rather to gain more cash over your time of work with us. That is the reason we dismiss all high-chance undertakings, that may prompt a quick heap of money out of the blue however to a primary capital's misfortune the second time.</p>
+            <p class="contact-info">Inquiry@clinMedix.com <br /> 2800 256 508</p>
+            <div class="social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook"></a>
+                <a href="#" class="fab fa-youtube"></a>
+                <a href="#" class="fab fa-pinterest"></a>
+            </div>
+        </div>
+    </section> -->
+    <section class="site-footer" style="background-image: url(images/footer].jpg);">
+        <div class="footer-top">
+            <div class="thm-container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-6 col-xs-12 ">
+                        <div class="footer-widget about-widget">
+                            <a href="index.html" class="logo-img"><img src="images/logo.png" alt="Awesome Image"/></a>
+                            <p>NeuroMS, our groundbreaking solution recognizing the challenges faced by those with MS.</p>
+                            <p>we embark on a journey to address a global concern that affects millions of lives <br> — Multiple Sclerosis.</p>
+                            <div class="social">
+                                <a href="#" class="fab fa-twitter"></a>
+                                <a href="#" class="fab fa-google-plus-g"></a>  
+                                <a href="#" class="fab fa-facebook-square"></a>  
+                                <a href="#" class="fab fa-instagram"></a>
+                                <a href="#" class="fab fa-youtube"></a>
+                            </div>
+                        </div><!-- /.footer-widget about-widget -->
+                    </div><!-- /.col-md-4 -->
+                    <div class="col-md-4 col-sm-6 col-xs-12 ">
+                        <div class="footer-widget links-widget departments-widget">
+                            <div class="title">
+                                <h3>Quick Links</h3>
+                            </div><!-- /.title -->
+                            <ul class="links-list">
+                                <!-- <li><a href="#"><i class="fa fa-angle-double-right"></i> Family Care Solutions</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Dentistry & Oral Surgery</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Neurology & Neurosurgery</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> General Prescriptions</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Children Health Center</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Diabetes Center</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Pediatric Clinic</a></li> -->
+
+                                <li> <a href="index.html"><i class="fa fa-angle-double-right"></i>Home</a> </li>
+                                <li> <a href="#services"><i class="fa fa-angle-double-right"></i>Our Services</a> </li>
+                                <li> <a href="#aboutMS"><i class="fa fa-angle-double-right"></i>About MS</a> </li>
+                                <li> <a href="#symptoms"><i class="fa fa-angle-double-right"></i>Symptoms</a> </li>
+                                <li> <a href="#diagnosis"><i class="fa fa-angle-double-right"></i>Diagnosis</a> </li>
+                                <li> <a href="#social_network"><i class="fa fa-angle-double-right"></i>Social Network</a> </li>
+                            </ul>
+                        </div><!-- /.footer-widget links-widget -->
+                    </div><!-- /.col-md-4 -->
+
+                    <!-- <div class="col-md-2 col-sm-6 col-xs-12 ">
+                        <div class="footer-widget links-widget quick-links-widget">
+                            <div class="title">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <ul class="links-list">
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> About ClinMedix</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Departments</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Our Surgeons Team</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Book an Appointment</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Contact</a></li>
+                                <li><a href="#"><i class="fa fa-angle-double-right"></i> Latest News</a></li>
+                            </ul>
+                        </div>
+                    </div> -->
+                    <div class="col-md-3 col-sm-6 col-xs-12 ">
+                        <div class="footer-widget contact-widget">
+                            <div class="title">
+                                <h3>Our Location</h3>
+                            </div><!-- /.title -->
+                            <p>Zagazig Sharqia, lakoz <br>Faculty of computer and information</p>
+                            <p>Emergency Helpline: +20 1110 843 514</p>
+                            <p>Mon to Fri : 09:00 am - 18:00 pm <br> Sat : 08:00 am - 16:00 pm</p>
+                        </div><!-- /.footer-widget contact-widget -->
+                    </div><!-- /.col-md-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.thm-container -->
+        </div><!-- /.footer-top -->
+        <!-- <div class="footer-bottom text-center">
+            <div class="thm-container">
+                <p>Copyrights © 2019 ClinMedix Medical Clinic. All Rights Reserved. </p>
+            </div>
+        </div> -->
+    </section><!-- /.site-footer -->
+
+
+
+    <div class="scroll-to-top scroll-to-target home-two" data-target="html"><i class="fa fa-angle-up"></i></div>
+
+    <script src="js/jquery.js"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="plugins/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/booking-form-config.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        function toggleChat() {
+            var chatContainer = document.getElementById('chat-container');
+            chatContainer.classList.toggle('shrinked');
+        }
+    </script>
+    
+<script>
+$(function() {
+    var INDEX = 0; 
+
+    $("#chat-submit").click(function(e) {
+        e.preventDefault();
+        var userMsg = $("#chat-input").val().trim(); 
+
+        if (userMsg === '') {
+            return false;
+        }
+
+        generate_message(userMsg, 'self');
+
+        // Call the getGptResponse function to get a response from GPT-3.5
+        getGptResponse(userMsg);
+    });
+
+    function generate_message(msg, type) {
+        INDEX++;
+        var str="";
+        str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+        // str += "          <span class=\"msg-avatar\">";
+        // str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+        // str += "          <\/span>";
+        str += "          <div class=\"cm-msg-text\">";
+        str += msg;
+        str += "          <\/div>";
+        str += "        <\/div>";
+        $(".chat-logs").append(str);
+        $("#cm-msg-"+INDEX).hide().fadeIn(300);
+        if(type == 'self'){
+            $("#chat-input").val(''); 
+        }    
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);    
+    }  
+
+    function generate_button_message(msg, buttons){    
+        INDEX++;
+        var btn_obj = buttons.map(function(button) {
+            return  "              <li class=\"button\"><a href=\"javascript:;\" class=\"btn btn-primary chat-btn\" chat-value=\""+button.value+"\">"+button.name+"<\/a><\/li>";
+        }).join('');
+        var str="";
+        str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg user\">";
+        // str += "          <span class=\"msg-avatar\">";
+        // str += "            <img src=\"https:\/\/image.crisp.im\/avatar\/operator\/196af8cc-f6ad-4ef7-afd1-c45d5231387c\/240\/?1483361727745\">";
+        // str += "          <\/span>";
+        str += "          <div class=\"cm-msg-text\">";
+        str += msg;
+        str += "          <\/div>";
+        str += "          <div class=\"cm-msg-button\">";
+        str += "            <ul>";   
+        str += btn_obj;
+        str += "            <\/ul>";
+        str += "          <\/div>";
+        str += "        <\/div>";
+        $(".chat-logs").append(str);
+        $("#cm-msg-"+INDEX).hide().fadeIn(300);   
+        $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight}, 1000);
+        $("#chat-input").attr("disabled", true);
+    }
+
+    $(document).delegate(".chat-btn", "click", function() {
+        var value = $(this).attr("chat-value");
+        var name = $(this).html();
+        $("#chat-input").attr("disabled", false);
+        generate_message(name, 'self');
+    });
+
+    function getGptResponse(userInput) {
+        fetch('https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer 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'
+            },
+            body: JSON.stringify({
+                prompt: `Answer the following question: ${userInput}\nAnswer:`,
+                max_tokens: 500,
+                n: 1,
+                temperature: 0.7
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            var gptResponse = data.choices[0].text.trim();
+            generate_message(gptResponse, 'user');
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    $("#chat-circle").click(function() {    
+        $("#chat-circle").toggle('scale');
+        $(".chat-box").toggle('scale');
+    });
+
+    $(".chat-box-toggle").click(function() {
+        $("#chat-circle").toggle('scale');
+        $(".chat-box").toggle('scale');
+    });
+});
+
+</script>
+
+    
+</body>
+
+</html>
