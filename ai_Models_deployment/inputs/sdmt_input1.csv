@@ -1,0 +1,2 @@
+Age,Cerebellum_Atrophy,Medulla_Atrophy,Brainstem_Lesion_Load,Vol_CerebellumGM,Vol_Lesions,Vol_NormalWM,Vol_VentricularCSF,Vol_TotalCSF,Vol_BrainParenchymalFr,Encoded_Diagnosis
+36,0.0,0.0,1.0,0.074,0.0,0.348,0.006,0.188,0.812,3

@@ -1,0 +1,2 @@
+Age,SDMT,EDSS,SNRS,CombiWISE,NeurEx,Brainstem_Atrophy,Brainstem_Lesion_Load,Cerebellum_Atrophy,GM_Lesion_Load,Medulla_Atrophy,Medulla_Lesion_Load,Vol_BrainParenchymalFr,Vol_CerebellumGM,Vol_Lesions,Vol_NormalWM,Vol_SulcalCSF,Vol_SupratentorialWM,Vol_TotalCSF,Vol_VentricularCSF
+51.89315068,46.0,5.5,55,42.36253556,142.938888,1,1.0,1.0,1,1.0,2,0.709,0.068,0.007,0.287,0.266,0.294,0.291,0.024
