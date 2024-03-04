@@ -13,13 +13,13 @@ The main_website folder contains the source code and assets for the main informa
 2. Model Deployment Folder
 The model_deployment folder contains the deployment of various AI models specifically developed to aid in MS-related assessments and diagnoses. These models include:
 
-Risk Assessment: An AI model that assesses the risk factors associated with MS development.
-MS Diagnosis: An AI model that assists in diagnosing MS based on input data and medical parameters.
-MS Type Detection: An AI model that helps determine the specific type of MS a patient may have.
-CIS Diagnosis: An AI model that aids in diagnosing Clinically Isolated Syndrome (CIS), often considered an early symptom of MS.
-EDSS: An AI model that evaluates the Expanded Disability Status Scale (EDSS) for MS patients, assessing their level of disability.
-SDMT: An AI model that performs the Symbol Digit Modalities Test (SDMT), a cognitive assessment tool used in MS diagnosis, and others like SNRS and CombiWise
-MRI Segmentation: An AI model specialized in segmenting MRI images to aid in the analysis and diagnosis of MS.
+      Risk Assessment: An AI model that assesses the risk factors associated with MS development.
+      MS Diagnosis: An AI model that assists in diagnosing MS based on input data and medical parameters.
+      MS Type Detection: An AI model that helps determine the specific type of MS a patient may have.
+      CIS Diagnosis: An AI model that aids in diagnosing Clinically Isolated Syndrome (CIS), often considered an early symptom of MS.
+      EDSS: An AI model that evaluates the Expanded Disability Status Scale (EDSS) for MS patients, assessing their level of disability.
+      SDMT: An AI model that performs the Symbol Digit Modalities Test (SDMT), a cognitive assessment tool used in MS diagnosis, and others like SNRS and     CombiWise
+      MRI Segmentation: An AI model specialized in segmenting MRI images to aid in the analysis and diagnosis of MS.
 
 3. Social Network Folder
 The social_network folder contains the code for a dedicated web page that fosters community engagement among individuals affected by MS. This social network module provides a platform for patients, caregivers, and medical professionals to connect, share experiences, and support one another. It enables users to create profiles, join relevant groups, participate in discussions, and access valuable resources specific to MS.
